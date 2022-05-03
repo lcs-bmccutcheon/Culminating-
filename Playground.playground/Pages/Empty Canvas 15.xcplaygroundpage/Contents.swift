@@ -55,24 +55,51 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+// Create a turtle that will draw upon the canvas
 
-// Begin writing your code below (you can remove the examples shown)
+let diagonal = Int(sqrt(Double (scale) * Double (scale) + Double (scale) * Double (scale)))
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+let scale = 20 
+//backwards arrow
+ turtle.penUp()
+ turtle.right(by: 90)
+ turtle.forward(steps: 5 * scale)
+ turtle.penDown()
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+ turtle.penUp()
+ turtle.right(by: 90)
+ turtle.forward(steps: 1)
+ turtle.left(by: 90)
+ turtle.penDown()
+ 
+ turtle.penDown()
+ turtle.forward(steps: 3 * scale )
 
-// Go back to origin
-p.goToOrigin()
+ // draw the turtle
+ //turtle.drawSelf()
 
-// Change the pen color
-p.penColor = .red
+ //draw upward line
+ turtle.left(by: 90)
+ turtle.forward(steps: 1 * scale)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+ //turtle.drawSelf()
 
+ //draw head of arrow
+ turtle.right(by: 135)
+
+ turtle.forward(steps: diagonal * 2)
+
+ turtle.right(by: 90)
+ turtle.forward(steps: diagonal * 2)
+
+ turtle.right(by: 135)
+ turtle.forward(steps: 1 * scale)
+
+ //draw body of arrow
+ turtle.left(by: 90)
+ turtle.forward(steps: 3 * scale)
+ turtle.right(by: 90)
+ turtle.forward(steps: 2 * scale)
 /*:
  ## Show the Live View
  Don't see any results?
