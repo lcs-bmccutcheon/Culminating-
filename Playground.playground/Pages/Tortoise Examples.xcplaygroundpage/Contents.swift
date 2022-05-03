@@ -37,6 +37,11 @@ PlaygroundPage.current.liveView = canvas
 // Create a turtle that will draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
 
+
+// Show a grid
+canvas.drawAxes(withScale: true, by: 20, color: .black)
+
+
 // Draw a square
 //turtle.penUp()
 //turtle.setPenColor(to: .black)
@@ -240,6 +245,62 @@ let turtle = Tortoise(drawingUpon: canvas)
 //    turtle.drawSelf()
 //}
 
+
+// function
+func DrawArrow () {
+    //fix position
+   
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 5 * scale)
+    turtle.penDown()
+
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.penDown()
+    
+    turtle.penDown()
+    turtle.forward(steps: 3 * scale )
+
+    // draw the turtle
+    //turtle.drawSelf()
+
+    //draw upward line
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+
+    //turtle.drawSelf()
+
+    //draw head of arrow
+    turtle.right(by: 135)
+
+    turtle.forward(steps: diagonal * 2)
+
+    turtle.right(by: 90)
+    turtle.forward(steps: diagonal * 2)
+
+    turtle.right(by: 135)
+    turtle.forward(steps: 1 * scale)
+
+    //draw body of arrow
+    turtle.left(by: 90)
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 2 * scale)
+    
+   
+    
+    
+}
+
+
+// draw backwards arrow
+func DrawBackwordArrow () {
+   
+    
+}
 // where is the turtle
 turtle.currentPosition()
 
@@ -248,9 +309,9 @@ let scale = 20
 
 //move more to the middle
 turtle.penUp()
-turtle.forward(steps: 6 * scale)
+turtle.forward(steps: 0 * scale)
 turtle.left(by: 90)
-turtle.forward(steps: 6 * scale)
+turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
 //turtle.drawSelf()
 
@@ -272,8 +333,10 @@ turtle.forward(steps: 1 * scale)
 turtle.right(by: 135)
 let diagonal = Int(sqrt(Double (scale) * Double (scale) + Double (scale) * Double (scale)))
 
+turtle.forward(steps: diagonal * 2)
+
 turtle.right(by: 90)
-turtle.forward(steps: <#T##Int#>)
+turtle.forward(steps: diagonal * 2)
 
 turtle.right(by: 135)
 turtle.forward(steps: 1 * scale)
@@ -283,6 +346,82 @@ turtle.left(by: 90)
 turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
 turtle.forward(steps: 2 * scale)
+
+
+
+
+
+
+for _ in 1...5 {
+    DrawArrow()
+    
+}
+
+
+turtle.penUp()
+turtle.forward(steps: 2 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 3 * scale)
+
+
+ turtle.penUp()
+ turtle.right(by: 90)
+ turtle.forward(steps: 5 * scale)
+ turtle.penDown()
+
+ turtle.penUp()
+ turtle.right(by: 90)
+ turtle.forward(steps: 1)
+ turtle.left(by: 90)
+ turtle.penDown()
+ 
+ turtle.penDown()
+ turtle.forward(steps: 3 * scale )
+
+ // draw the turtle
+ //turtle.drawSelf()
+
+ //draw upward line
+ turtle.left(by: 90)
+ turtle.forward(steps: 1 * scale)
+
+ //turtle.drawSelf()
+
+ //draw head of arrow
+ turtle.right(by: 135)
+
+ turtle.forward(steps: diagonal * 2)
+
+ turtle.right(by: 90)
+ turtle.forward(steps: diagonal * 2)
+
+ turtle.right(by: 135)
+ turtle.forward(steps: 1 * scale)
+
+ //draw body of arrow
+ turtle.left(by: 90)
+ turtle.forward(steps: 3 * scale)
+ turtle.right(by: 90)
+ turtle.forward(steps: 2 * scale)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*:
  ## Show the Assistant Editor
