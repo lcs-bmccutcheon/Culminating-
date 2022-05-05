@@ -55,58 +55,65 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-//first +
-turtle.drawSelf()
+turtle.setPenColor(to: .blue)
+turtle.setPenSize(to: 2)
+// teach the computer how to draw cross
+func drawCross () {
+    turtle.drawSelf()
 
-turtle.left(by: 90)
-turtle.forward(steps: 20)
-turtle.right(by: 90)
-turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-turtle.left(by: 90)
-turtle.forward(steps: 20)
-turtle.right(by: 90)
-turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-turtle.right(by: 90)
-turtle.forward(steps: 20)
-turtle.left(by: 90)
-turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
 
-turtle.right(by: 90)
-turtle.forward(steps: 20)
-turtle.right(by: 90)
-turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-turtle.left(by: 90)
-turtle.forward(steps: 20)
-turtle.right(by: 90)
-turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-turtle.right(by: 90)
-turtle.forward(steps: 20)
-turtle.left(by: 90)
-turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
 
-// get back to start
+    // get back to start
 
-turtle.right(by: 180)
+    turtle.right(by: 180)
 
-turtle.drawSelf()
+    turtle.drawSelf()
+}
 
 
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+
+// get into position for next cross
+func moveToPosition () {
+    turtle.penUp()
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 40)
+    turtle.right(by: 90)
+    turtle.penDown()
+}
+
+
+for _ in 1...5 {
+    drawCross()
+    moveToPosition()
+}
+
