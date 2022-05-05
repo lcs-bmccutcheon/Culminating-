@@ -55,23 +55,45 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//first +
+turtle.drawSelf()
 
-// Begin writing your code below (you can remove the examples shown)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
 
-// Go back to origin
-p.goToOrigin()
+turtle.right(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
 
-// Change the pen color
-p.penColor = .red
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+
+// get back to start
+
+turtle.right(by: 180)
+
+turtle.drawSelf()
+
 
 /*:
  ## Show the Live View
