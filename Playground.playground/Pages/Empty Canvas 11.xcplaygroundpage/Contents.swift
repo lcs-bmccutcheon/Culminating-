@@ -55,6 +55,8 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+let scale = 20
+
 turtle.setPenColor(to: .blue)
 turtle.setPenSize(to: 2)
 // teach the computer how to draw cross
@@ -117,3 +119,5 @@ for _ in 1...5 {
     moveToPosition()
 }
 
+turtle.penUp()
+turtle.backward(steps: 4 * scale)
