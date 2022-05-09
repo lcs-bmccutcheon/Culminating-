@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 480
+let preferredHeight = 480
 /*:
  ## Required code
  
@@ -41,11 +41,11 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: 20,
-                           y: 20))
+canvas.translate(to: Point(x: -20,
+                           y: -20))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+//canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 /*:
  ## Add your code
@@ -61,7 +61,7 @@ canvas.highPerformance = true
 
 turtle.penUp()
 turtle.left(by: 90)
-turtle.forward(steps: 28 * scale )
+turtle.forward(steps: 30 * scale )
 turtle.right(by: 90)
 turtle.penDown()
 
@@ -69,7 +69,7 @@ turtle.setPenColor(to: .blue)
 turtle.setPenSize(to: 2)
 // teach the computer how to draw cross
 func drawCross () {
-    turtle.drawSelf()
+    
 
     turtle.left(by: 90)
     turtle.forward(steps: 20)
@@ -105,7 +105,7 @@ func drawCross () {
 
     turtle.right(by: 180)
 
-    turtle.drawSelf()
+   
 }
 
 
@@ -114,9 +114,9 @@ func drawCross () {
 // get into position for next cross
 func moveToPosition () {
     turtle.penUp()
-    turtle.forward(steps: 20)
+    turtle.forward(steps: 1 * scale)
     turtle.left(by: 90)
-    turtle.forward(steps: 40)
+    turtle.forward(steps: 2 * scale)
     turtle.right(by: 90)
     turtle.penDown()
 }
@@ -158,14 +158,35 @@ func drawRow () {
     turtle.left(by: 90)
     turtle.penDown()
 
-    for _ in 1...10 {
+    for _ in 1...6 {
         drawCross()
         moveToPosition()
     }
 }
 
-for _ in 1...10 {
+for _ in 1...12 {
     drawRow()
 }
 
+turtle.penUp()
+turtle.backward(steps: 35 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 5 * scale )
+turtle.right(by: 90)
+turtle.penDown()
+
+for _ in 1...15 {
+    drawRow()
+}
+
+turtle.penUp()
+turtle.backward(steps: 35 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 5 * scale )
+turtle.right(by: 90)
+turtle.penDown()
+
+for _ in 1...16 {
+    drawRow()
+}
 canvas.highPerformance = false
