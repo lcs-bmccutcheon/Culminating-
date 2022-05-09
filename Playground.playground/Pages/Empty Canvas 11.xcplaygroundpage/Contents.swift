@@ -41,8 +41,8 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+canvas.translate(to: Point(x: 20,
+                           y: 20))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -56,6 +56,14 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 let scale = 20
+
+canvas.highPerformance = true
+
+turtle.penUp()
+turtle.left(by: 90)
+turtle.forward(steps: 28 * scale )
+turtle.right(by: 90)
+turtle.penDown()
 
 turtle.setPenColor(to: .blue)
 turtle.setPenSize(to: 2)
@@ -121,3 +129,43 @@ for _ in 1...5 {
 
 turtle.penUp()
 turtle.backward(steps: 4 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 13 * scale)
+turtle.left(by: 90)
+turtle.penDown()
+
+for _ in 1...6 {
+    drawCross()
+    moveToPosition()
+}
+turtle.penUp()
+turtle.backward(steps: 4 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 13 * scale)
+turtle.left(by: 90)
+turtle.penDown()
+
+for _ in 1...6 {
+    drawCross()
+    moveToPosition()
+}
+
+func drawRow () {
+    turtle.penUp()
+    turtle.backward(steps: 4 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 13 * scale)
+    turtle.left(by: 90)
+    turtle.penDown()
+
+    for _ in 1...10 {
+        drawCross()
+        moveToPosition()
+    }
+}
+
+for _ in 1...10 {
+    drawRow()
+}
+
+canvas.highPerformance = false
