@@ -9,8 +9,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
  */
-let preferredWidth = 800
-let preferredHeight = 800
+let preferredWidth = 500
+let preferredHeight = 385
 /*:
  ## Required code
  
@@ -26,7 +26,7 @@ import CanvasGraphics
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Translate origin a bit
-canvas.translate(to: Point(x: 150, y: 150))
+canvas.translate(to: Point(x: -100, y: 5))
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
@@ -43,7 +43,7 @@ let turtle = Tortoise(drawingUpon: canvas)
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+//canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 
 // function
@@ -118,7 +118,7 @@ for _ in  1...5 {
 
     // get arrow to next row
     turtle.currentHeading()
-    turtle.drawSelf()
+
     turtle.penUp()
     turtle.left(by: 90)
     turtle.forward(steps: 25 * scale)
