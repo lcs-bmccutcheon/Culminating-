@@ -99,29 +99,47 @@ func drawCross () {
 
 drawCross()
 
+turtle.setPenColor(to: .blue)
+
 //fill square
 
 func drawFill () {
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90)
+ 
     turtle.forward(steps: 20)
     turtle.left(by: 90)
     turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    
     
    
+    for _ in 1...10 {
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 20)
 
-    for _ in 1...8 {
-        turtle.left(by: 90)
-        turtle.forward(steps: 20)
-        turtle.right(by: 90)
-        turtle.forward(steps: 1)
-        turtle.right(by: 90)
-        turtle.forward(steps: 20)
-        turtle.left(by: 90)
-        turtle.forward(steps: 1)
     }
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.drawSelf()
+}
+
+func moveToNextSpot () {
+    
+
+    turtle.forward(steps: 20)
+    turtle.drawSelf()
 }
 
 drawFill()
-
+moveToNextSpot()
+drawFill()
+moveToNextSpot()
+drawFill()
