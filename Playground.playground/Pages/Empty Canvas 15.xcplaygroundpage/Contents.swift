@@ -57,49 +57,78 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 // Create a turtle that will draw upon the canvas
 
-let diagonal = Int(sqrt(Double (scale) * Double (scale) + Double (scale) * Double (scale)))
+turtle.setPenColor(to: .blue)
+func drawShadedCross () {
+    func drawFill () {
+        
+        
 
-let scale = 20 
-//backwards arrow
- turtle.penUp()
- turtle.right(by: 90)
- turtle.forward(steps: 5 * scale)
- turtle.penDown()
+       
+        for _ in 1...10 {
+            
+            turtle.forward(steps: 20)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1)
+            turtle.left(by: 90)
+            turtle.forward(steps: 20)
+            turtle.right(by: 90)
+            turtle.forward(steps: 1)
+            turtle.right(by: 90)
+          
+            
 
- turtle.penUp()
- turtle.right(by: 90)
- turtle.forward(steps: 1)
- turtle.left(by: 90)
- turtle.penDown()
- 
- turtle.penDown()
- turtle.forward(steps: 3 * scale )
+        }
+        turtle.penUp()
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.right(by: 180)
+    }
 
- // draw the turtle
- //turtle.drawSelf()
+    func moveToNextSpot () {
+        
 
- //draw upward line
- turtle.left(by: 90)
- turtle.forward(steps: 1 * scale)
+        turtle.forward(steps: 40)
+        turtle.penDown()
+    }
 
- //turtle.drawSelf()
+    drawFill()
+    moveToNextSpot()
+    drawFill()
+    moveToNextSpot()
+    drawFill()
 
- //draw head of arrow
- turtle.right(by: 135)
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 0)
+    turtle.right(by: 180)
+   
+    turtle.penDown()
+    drawFill()
 
- turtle.forward(steps: diagonal * 2)
 
- turtle.right(by: 90)
- turtle.forward(steps: diagonal * 2)
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 40)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
 
- turtle.right(by: 135)
- turtle.forward(steps: 1 * scale)
+    turtle.penDown()
 
- //draw body of arrow
- turtle.left(by: 90)
- turtle.forward(steps: 3 * scale)
- turtle.right(by: 90)
- turtle.forward(steps: 2 * scale)
+    drawFill()
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 0)
+    turtle.right(by: 180)
+    turtle.drawSelf()
+}
+
+drawShadedCross()
+
 /*:
  ## Show the Live View
  Don't see any results?

@@ -102,39 +102,101 @@ drawCross()
 turtle.setPenColor(to: .blue)
 
 //fill square
+func drawShadedCross () {
+    func drawFill () {
+        
+        
 
-func drawFill () {
- 
-    turtle.forward(steps: 20)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.left(by: 90)
-    turtle.forward(steps: 20)
-    
-    
-   
-    for _ in 1...10 {
-        turtle.right(by: 90)
-        turtle.forward(steps: 1)
+       
+        for _ in 1...10 {
+            
+            turtle.forward(steps: 20)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1)
+            turtle.left(by: 90)
+            turtle.forward(steps: 20)
+            turtle.right(by: 90)
+            turtle.forward(steps: 1)
+            turtle.right(by: 90)
+          
+            
+
+        }
+        turtle.penUp()
         turtle.right(by: 90)
         turtle.forward(steps: 20)
-        turtle.left(by: 90)
-        turtle.forward(steps: 1)
-        turtle.left(by: 90)
+        turtle.right(by: 90)
         turtle.forward(steps: 20)
-
+        turtle.right(by: 180)
     }
+
+    func moveToNextSpot () {
+        
+
+        turtle.forward(steps: 40)
+        turtle.drawSelf()
+    }
+
+    drawFill()
+    moveToNextSpot()
+    drawFill()
+    moveToNextSpot()
+    drawFill()
+
     turtle.penUp()
     turtle.left(by: 90)
     turtle.forward(steps: 20)
     turtle.left(by: 90)
+    turtle.forward(steps: 0)
+    turtle.right(by: 180)
     turtle.drawSelf()
+    turtle.penDown()
+    drawFill()
+
+
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 40)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.penDown()
+
+    drawFill()
+
+}
+
+
+func drawFill () {
+    
+    
+
+   
+    for _ in 1...10 {
+        
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 20)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90)
+      
+        
+
+    }
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 180)
 }
 
 func moveToNextSpot () {
     
 
-    turtle.forward(steps: 20)
+    turtle.forward(steps: 40)
     turtle.drawSelf()
 }
 
@@ -142,4 +204,24 @@ drawFill()
 moveToNextSpot()
 drawFill()
 moveToNextSpot()
+drawFill()
+
+turtle.penUp()
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 0)
+turtle.right(by: 180)
+turtle.drawSelf()
+turtle.penDown()
+drawFill()
+
+
+turtle.penUp()
+turtle.right(by: 90)
+turtle.forward(steps: 40)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.penDown()
+
 drawFill()
