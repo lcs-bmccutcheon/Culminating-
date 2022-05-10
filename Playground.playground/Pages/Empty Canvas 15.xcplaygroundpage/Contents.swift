@@ -41,8 +41,8 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+canvas.translate(to: Point(x: canvas.width / 20,
+                           y: canvas.height / 20))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -56,6 +56,8 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 // Create a turtle that will draw upon the canvas
+
+canvas.highPerformance = true
 
 turtle.setPenColor(to: .blue)
 func drawShadedCross () {
@@ -119,15 +121,27 @@ func drawShadedCross () {
     turtle.penDown()
 
     drawFill()
+    turtle.penUp()
     turtle.left(by: 90)
     turtle.forward(steps: 20)
     turtle.left(by: 90)
     turtle.forward(steps: 0)
     turtle.right(by: 180)
-    turtle.drawSelf()
+    turtle.penDown()
 }
 
 drawShadedCross()
+
+
+for _ in 1...5 {
+    turtle.penUp()
+    turtle.forward(steps: 100)
+    turtle.penDown()
+    drawShadedCross()
+}
+
+canvas.highPerformance = false 
+
 
 /*:
  ## Show the Live View
