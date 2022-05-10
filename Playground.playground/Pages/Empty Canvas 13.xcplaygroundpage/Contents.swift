@@ -56,35 +56,72 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+func drawCross () {
+    
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-// Go back to origin
-p.goToOrigin()
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-// Change the pen color
-p.penColor = .red
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+
+    // get back to start
+
+    turtle.right(by: 180)
+
+   
+}
+
+drawCross()
+
+//fill square
+
+func drawFill () {
+    turtle.left(by: 90)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1)
+    
+   
+
+    for _ in 1...8 {
+        turtle.left(by: 90)
+        turtle.forward(steps: 20)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+    }
+}
+
+drawFill()
+
