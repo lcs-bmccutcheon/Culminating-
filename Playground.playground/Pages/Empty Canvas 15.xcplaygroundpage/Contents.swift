@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 1000
+let preferredHeight = 1000
 /*:
  ## Required code
  
@@ -132,29 +132,36 @@ func drawShadedCross () {
 
 drawShadedCross()
 
-
-for _ in 1...5 {
+func moveToNextPosition () {
     turtle.penUp()
-    turtle.forward(steps: 100)
+    turtle.forward(steps: 60)
+    turtle.left(by: 90)
+    turtle.forward(steps: 60)
+    turtle.drawSelf()
+    turtle.right(by: 90)
     turtle.penDown()
-    drawShadedCross()
 }
 
+moveToNextPosition()
+drawShadedCross()
+
+for _ in 1...8{
+    moveToNextPosition()
+    drawShadedCross()
+}
+       
+func nextRow () {
+
+    turtle.penUp()
+    turtle.left(by: 180)
+    turtle.forward(steps: 430)
+    turtle.left(by: 90)
+    turtle.backward(steps: 400)
+    turtle.penDown()
+}
+
+nextRow()
+drawShadedCross()
+drawShadedCross()
 canvas.highPerformance = false 
 
-
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
