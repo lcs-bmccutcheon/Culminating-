@@ -41,11 +41,10 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 20,
-                           y: canvas.height / 20))
+canvas.translate(to: Point(x: canvas.width / 40,
+                           y: canvas.height / 40))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 /*:
  ## Add your code
@@ -56,16 +55,24 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 // Create a turtle that will draw upon the canvas
-
+//fast code
 canvas.highPerformance = true
-
+// blue
 turtle.setPenColor(to: .blue)
+
+//move to better location
+turtle.penUp()
+turtle.left(by: 90)
+turtle.forward(steps: 200)
+turtle.right(by: 90)
+turtle.penDown()
+//complete one shaded +
 func drawShadedCross () {
     func drawFill () {
         
         
 
-       
+      
         for _ in 1...10 {
             
             turtle.forward(steps: 20)
@@ -88,6 +95,7 @@ func drawShadedCross () {
         turtle.right(by: 180)
     }
 
+    // moves to next spot
     func moveToNextSpot () {
         
 
@@ -130,38 +138,83 @@ func drawShadedCross () {
     turtle.penDown()
 }
 
+
+
+//draw 1 +
 drawShadedCross()
 
+//move to next spot
 func moveToNextPosition () {
     turtle.penUp()
-    turtle.forward(steps: 60)
+    turtle.forward(steps: 20)
     turtle.left(by: 90)
     turtle.forward(steps: 60)
-    turtle.drawSelf()
+
     turtle.right(by: 90)
     turtle.penDown()
 }
 
+//move and draw 1 +
 moveToNextPosition()
 drawShadedCross()
 
-for _ in 1...8{
+// complete colom of +
+for _ in 1...9{
     moveToNextPosition()
     drawShadedCross()
 }
        
+// move no next collom
 func nextRow () {
 
     turtle.penUp()
-    turtle.left(by: 180)
-    turtle.forward(steps: 430)
+    turtle.right(by: 90)
+    turtle.forward(steps: 620)
     turtle.left(by: 90)
-    turtle.backward(steps: 400)
+    turtle.backward(steps: 140)
     turtle.penDown()
+}
+
+//next row
+nextRow()
+drawShadedCross()
+turtle.drawSelf()
+
+//draw another row
+for _ in 1...10{
+    moveToNextPosition()
+    drawShadedCross()
+}
+
+
+nextRow()
+drawShadedCross()
+
+
+
+
+
+//row 3
+for _ in 1...10{
+    moveToNextPosition()
+    drawShadedCross()
 }
 
 nextRow()
 drawShadedCross()
-drawShadedCross()
+
+for _ in 1...8 {
+        for _ in 1...10{
+            moveToNextPosition()
+            drawShadedCross()
+        }
+
+        nextRow()
+        drawShadedCross()
+}
+
+
+
+// no more fast mode
 canvas.highPerformance = false 
 
